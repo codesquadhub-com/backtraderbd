@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
-with open("README.md", "r") as fh:
-    long_description = fh.read()
+with open('README.md') as readme_file:
+    README = readme_file.read()
 
 with open('HISTORY.md') as history_file:
     HISTORY = history_file.read()
@@ -18,23 +18,19 @@ setup_args = dict(
     author_email='raisul.exe@gmail.com',
     keywords=['backtrader','backtester'],
     url='https://github.com/rochi88/backtraderbd',
-    download_url='https://pypi.org/project/elastictools/'
+    download_url='https://github.com/rochi88/backtraderbd/archive/master.zip'
 )
 
 install_requires = [
-    'beautifulsoup4',	# tushare require
-    'lxml', # tushare require
-    'xlrd', # tushare require
-    'requests', # tushae require
-    'pandas==0.20.1',
+    'beautifulsoup4',	# dshare require
+    'lxml', # dshare require
+    'xlrd', # dshare require
+    'requests', # dshae require
+    'pandas',
     'backtrader',
-    'tushare',
+    'dshare',
     'arctic',
-    'WeRoBot==1.1.1',
-    'gevent',
-    'easytrader==0.12.3',
-    'demjson==2.2.4',
-    'retrying==1.3.3'
+    'gevent'
 ]
 
 if __name__ == '__main__':

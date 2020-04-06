@@ -1,2 +1,2 @@
 # backtraderbd
-A backtester utility for dse
+A backtester utility for stock market
