@@ -28,15 +28,12 @@ setup_args = dict(
 )
 
 install_requires = [
-    'beautifulsoup4',	# bdshare require
-    'lxml', # bdshare require
-    'xlrd', # bdshare require
-    'requests', # bdshae require
+    'beautifulsoup4',	
+    'requests', 
     'pandas',
     'backtrader',
     'bdshare',
-    'arctic',
-    'gevent'
+    'arctic'
 ]
 
 if __name__ == '__main__':
