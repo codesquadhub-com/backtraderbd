@@ -3,13 +3,12 @@ import datetime as dt
 import math
 
 import backtrader as bt
+import bdshare as bds
 
-import backtradercn.analyzers.drawdown as bad
-import backtradercn.datas.tushare as bdt
-import backtradercn.strategies.utils as bsu
-from backtradercn.settings import settings as conf
-from backtradercn.libs.log import get_logger
-from backtradercn.libs.models import get_or_create_library
+import backtraderbd.strategies.utils as bsu
+from backtraderbd.settings import settings as conf
+from backtraderbd.libs.log import get_logger
+from backtraderbd.libs.models import get_or_create_library
 
 logger = get_logger(__name__)
 
