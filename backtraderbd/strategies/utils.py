@@ -12,7 +12,6 @@ logger = get_logger(__name__)
 
 class Utils(object):
 
-    DEFAULT_CASH = 10000.0
 
     @classmethod
     def split_data(cls, data, percent=0.3):

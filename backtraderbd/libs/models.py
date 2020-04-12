@@ -89,7 +89,7 @@ def drop_library(lib_name):
 def get_bd_stocks():
     """
     get all Bangladeshi stock ids from arctic library.
-    :return: list, stock id list. e.g.: ['000651', '601988' ...]
+    :return: list, stock id list. e.g.: ['1JANATAMF', '1STPRIMFMF' ...]
     """
 
     lib = get_library(conf.BD_STOCK_LIBNAME)
