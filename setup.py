@@ -9,7 +9,7 @@ def read(fname):
 with open('README.md') as readme_file:
     README = readme_file.read()
 
-with open('HISTORY.md') as history_file:
+with open('CHANGELOG.md') as history_file:
     HISTORY = history_file.read()
 
 setup_args = dict(
@@ -37,7 +37,7 @@ install_requires = [
 ]
 
 classifiers=[
-        'Development Status :: 1 - Alpha',
+        'Development Status :: 1 - Dev',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
