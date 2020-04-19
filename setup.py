@@ -23,6 +23,7 @@ setup_args = dict(
     author='Raisul Islam',
     author_email='raisul.exe@gmail.com',
     keywords=['backtrader','backtester'],
+    python_requires='>=3.5',
     url='https://github.com/rochi88/backtraderbd',
     download_url='https://github.com/rochi88/backtraderbd/archive/master.zip'
 )
@@ -33,11 +34,12 @@ install_requires = [
     'pandas',
     'backtrader',
     'bdshare',
-    'arctic'
+    'arctic',
+    'proviso'
 ]
 
 classifiers=[
-        'Development Status :: 1 - Dev',
+        'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
@@ -48,6 +50,9 @@ classifiers=[
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Topic :: Software Development :: Libraries :: Python Modules',
+        'Topic :: Scientific/Engineering :: Artificial Intelligence',
+        'Topic :: Scientific/Engineering :: Information Analysis',
+        'Topic :: Office/Business :: Financial :: Investment',
 ]
 
 if __name__ == '__main__':

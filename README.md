@@ -6,7 +6,7 @@
 
 # Documentation
 
-Complete documentation can be found at [Readthedocs](http://backtraderbd.readthedocs.io/en/latest/ "backtrader's readthedocs") .
+Complete documentation can be found at [Readthedocs](http://backtraderbd.readthedocs.io/en/latest/ "backtraderbd's readthedocs") .
 
 
 ## Contributing to this project

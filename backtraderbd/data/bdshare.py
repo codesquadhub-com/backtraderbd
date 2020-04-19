@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import datetime as dt
 import bdshare as bds
+import pandas as pd
 
 import backtraderbd.data.utils as bdu
 from backtraderbd.settings import settings as conf
@@ -11,9 +12,9 @@ from backtraderbd.libs.models import get_or_create_library
 logger = get_logger(__name__)
 
 class DseHisData(object):
-   """
+    """
     Mapping one collection in 'dse_his_lib' library, download and
-    maintain history data from bdshare, and provide other modules with the data.
+    maintain history data from dse using bdshare, and provide other modules with the data.
     columns: open, high, close, low, volume
     Attributes:
         coll_name(string): stock id like 'ACI'.
@@ -70,7 +71,7 @@ class DseHisData(object):
         start = latest_date + dt.timedelta(days=1)
         start = dt.datetime.strftime(start, '%Y-%m-%d')
 
-        his_data = bds.get_hist_data(
+        his_data = bds.get_basic_hist_data(
             start=start,
             end=start,
             code=self._coll_name
@@ -111,14 +112,17 @@ class DseHisData(object):
         # if collection is not initialized
         if self._coll_name not in self._library.list_symbols():
             self._new_added_colls.append(self._coll_name)
-            his_data = ts.get_hist_data(code=self._coll_name, retry_count=5).sort_index()
+            #end = dt.datetime.now().strftime('%Y-%m-%d')
+            end = dt.datetime.now().date()
+            #start = end - dt.timedelta(days=2*360)
+            his_data = bds.get_basic_hist_data('2008-01-01', end, code=self._coll_name).sort_index()
             if len(his_data) == 0:
                 logger.warning(
                     f'data of stock {self._coll_name} when initiation is empty'
                 )
                 return
 
-            his_data = bdu.Utils.strip_unused_cols(his_data, *self._unused_cols)
+            #his_data = bdu.Utils.strip_unused_cols(his_data, *self._unused_cols)
 
             logger.debug(f'write history data for stock: {self._coll_name}.')
             self._library.write(self._coll_name, his_data)
