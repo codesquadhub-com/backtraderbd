@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from backtraderbd.btask import Btask
 
 
 class Task(object):
@@ -9,8 +10,8 @@ class Task(object):
         stock_id(string): id of stock to be back tested.
     """
 
-    def __init__(self, Strategy, stock_id):
-        self._Strategy = Strategy
+    def __init__(self, strategy, stock_id):
+        self._Strategy = strategy
         self._stock_id = stock_id
 
     def task(self):
@@ -25,9 +26,10 @@ class Task(object):
         # Run back testing, get the analysis data
         # result = self._Strategy.run_back_testing(data, best_param)
 
-        result = self._Strategy.run_back_testing(self._stock_id)
+        #result = self._Strategy.run_back_testing(self._stock_id)
+        result = Btask.run_back_testing(self._Strategy, self._stock_id)
 
         return result
 
     def train(self):
-        return self._Strategy.run_training(self._stock_id)
+        return Btask.run_training(self._stock_id)

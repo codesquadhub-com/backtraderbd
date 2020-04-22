@@ -29,11 +29,11 @@ class Utils(object):
         return data.iloc[:train_rows], data.iloc[-test_rows:]
 
     @classmethod
-    def log(cls, dt, txt):
+    def log(cls, txt, dt=None):
         """
         Logging function for strategy, level is info.
-        :param dt(datetime): datetime for bar.
         :param txt(string): txt to be logged.
+        :param dt(datetime): datetime for bar.
         :return: None
         """
         logger.debug('%s, %s' % (dt.isoformat(), txt))

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import backtraderbd.strategies.ma as bsm
+import backtraderbd.strategies.smac as bsm
 import backtraderbd.tasks as btasks
 from backtraderbd.libs.log import get_logger
 from backtraderbd.settings import settings as conf
@@ -16,7 +16,7 @@ def train(stock):
     :return: None
     """
 
-    task = btasks.Task(bsm.MATrendStrategy, stock)
+    task = btasks.Task(bsm.SMACStrategy, stock)
     params = task.train()
     # write stock params to MongoDB
     symbol = conf.STRATEGY_PARAMS_MA_SYMBOL

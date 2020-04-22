@@ -5,7 +5,6 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 
 
 from backtraderbd.data.bdshare import DseHisData as bds
-import backtraderbd.strategies.ma as bsm
 import backtraderbd.tasks as btasks
 from backtraderbd.libs.log import get_logger
 from backtraderbd.settings import settings as conf
@@ -14,12 +13,13 @@ from backtraderbd.libs import models
 logger = get_logger(__name__)
 
 
-def back_test(stock):
+def back_test(Strategy, stock):
     """
     Run back testing tasks via multiprocessing
     :return: None
     """
-    task = btasks.Task(bsm.MATrendStrategy, stock)
+    task = btasks.Task(Strategy, stock)
+    print('Process for Stock Code {0}:: sent'.format(stock))
     result = task.task()
 
     stock_id = result.get('stock_id')
@@ -46,7 +46,7 @@ def back_test(stock):
         )
 
 
-def main(stock_pools):
+def main(Strategy, stock_pools):
     """
     Get all stocks and run back test.
     :param stock_pools: list, the stock code list.
@@ -56,7 +56,7 @@ def main(stock_pools):
     pool = multiprocessing.Pool()
     for stock in stock_pools:
         #bds.download_one_delta_data(stock)
-        pool.apply_async(back_test, args=(stock, ))
+        pool.apply_async(back_test, args=(Strategy, stock, ))
         print('Process No: {0} - Stock Code: {1} :: Done'.format(i,  stock))
         i +=1
     pool.close()
@@ -65,4 +65,4 @@ def main(stock_pools):
 
 if __name__ == '__main__':
     bd_stocks = models.get_bd_stocks()
-    main(bd_stocks)
+    main("smac", bd_stocks)

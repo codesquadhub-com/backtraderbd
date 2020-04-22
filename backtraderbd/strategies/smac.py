@@ -17,8 +17,8 @@ class SMACStrategy(BaseStrategy):
     name = conf.STRATEGY_PARAMS_SMAC_SYMBOL
 
     params = (
-        ("fast_period", 10),  # period for the fast moving average
-        ("slow_period", 30),
+        ("fast_period", 15),  # period for the fast moving average
+        ("slow_period", 60),
     )
 
     def __init__(self):
