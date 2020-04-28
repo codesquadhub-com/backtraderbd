@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-import os
-
 PROJECT_NAME = 'backtraderbd'
 
 # log setting
@@ -16,7 +14,7 @@ STRATEGY_PARAMS_RSI_SYMBOL = 'rsi_trend'
 STRATEGY_PARAMS_SMAC_SYMBOL = 'smac_trend'
 STRATEGY_PARAMS_MACD_SYMBOL = 'macd_trend'
 STRATEGY_PARAMS_EMAC_SYMBOL = 'emac_trend'
-LZ4_N_PARALLEL=8
+LZ4_N_PARALLEL = 8
 
 # Global arguments
 DEFAULT_CASH = 100000.0
@@ -26,3 +24,9 @@ PERIODIC_LOGGING = False
 TRANSACTION_LOGGING = True
 BUY_PROP = 1
 SELL_PROP = 1
+
+# constant
+HOLD_THRESHOLD = 1
+LONG = 0
+SHORT = 1
+FLAT = 2
