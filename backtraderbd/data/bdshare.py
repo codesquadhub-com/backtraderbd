@@ -115,7 +115,7 @@ class DseHisData(object):
             #end = dt.datetime.now().strftime('%Y-%m-%d')
             end = dt.datetime.now().date()
             #start = end - dt.timedelta(days=2*360)
-            his_data = bds.get_basic_hist_data('2008-01-01', end, code=self._coll_name).sort_index()
+            his_data = bds.get_basic_hist_data('2008-01-01', end, code=self._coll_name, index='date').sort_index()
             if len(his_data) == 0:
                 logger.warning(
                     f'data of stock {self._coll_name} when initiation is empty'
