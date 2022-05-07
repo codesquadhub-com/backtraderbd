@@ -21,7 +21,7 @@ setup_args = dict(
     license='MIT',
     packages=find_packages(),
     author='Raisul Islam',
-    author_email='raisul.exe@gmail.com',
+    author_email='raisul.me@gmail.com',
     keywords=['backtrader','backtester'],
     python_requires='>=3.5',
     url='https://github.com/rochi88/backtraderbd',
