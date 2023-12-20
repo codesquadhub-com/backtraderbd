@@ -7,7 +7,7 @@ from backtraderbd.settings import test
 from backtraderbd.settings import prod
 
 
-__all_ = ['settings']
+__all__ = ['settings']
 
 
 settings = None
